@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Xpra Performance Results</title>
+  <link href="css/xpra.css" rel="stylesheet" type="text/css">
+  <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+  <script language="javascript" type="text/javascript" src="js/jquery.flot.js"></script>
+  <script language="javascript" type="text/javascript" src="js/jquery.flot.categories.js"></script>
+  <script language="javascript" type="text/javascript" src="js/jquery.flot.orderbars_mod.js"></script>
+  <script language="javascript" type="text/javascript" src="js/xpra.js"></script>
+  <script language="javascript" type="text/javascript">

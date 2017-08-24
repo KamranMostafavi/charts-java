@@ -1,0 +1,83 @@
+{
+	"description" : "Comparison between two test runs.",
+
+	"params": [{
+		"id": "1",
+		"file": "src/xtests/logs/test_1_1.csv",
+		"display": "run 1"
+	}, {
+		"id": "2",
+		"file":"src/xtests/logs/test_2_1.csv",
+		"display": "run 2"
+	}, {
+		"id": "3",
+		"file":"src/xtests/logs/test_2_1.csv",
+		"display": "run 3"
+	}, {
+		"id": "4",
+		"file":"src/xtests/logs/test_2_1.csv",
+		"display": "run 4"
+	}],
+
+	"apps": {
+		"glxgears": 0,
+		"glxspheres": 0,
+		"glxspheres64": 0,
+		"moebiusgears": 0,
+		"polytopes": 0,
+		"x11perf": 0,
+		"xterm": 0,
+		"gtkperf": 0,
+		"memscroller": 0,
+		"deluxe": 1,
+		"eruption": 0,
+		"vlc sound visual": 0,
+		"vlc video": 0,
+		"xonotic-glx": 0
+	},
+
+	"metrics": {
+		"Regions/s": 0,
+		"Pixels/s Sent": 1,
+		"Encoding Pixels/s": 1,
+		"Decoding Pixels/s": 1,
+		"Application packets in/s": 1,
+		"Application bytes in/s": 1,
+		"Application packets out/s": 0,
+		"Application bytes out/s": 0,
+		"client user cpu_pct": 0,
+		"client system cpu pct": 0,
+		"client number of threads": 0,
+		"client vsize (MB)": 0,
+		"client rss (MB)": 0,
+		"server user cpu_pct": 0,
+		"server system cpu pct": 0,
+		"server number of threads": 0,
+		"server vsize (MB)": 0,
+		"server rss (MB)": 0,
+		"Min Batch Delay (ms)": 0,
+		"Avg Batch Delay (ms)": 0,
+		"Max Batch Delay (ms)": 0,
+		"Min Damage Latency (ms)": 0,
+		"Avg Damage Latency (ms)": 0,
+		"Max Damage Latency (ms)": 0,
+		"Min Quality": 0,
+		"Avg Quality": 0,
+		"Max Quality": 0,
+		"Min Speed": 0,
+		"Avg Speed": 0,
+		"Max Speed": 0,
+		"Sample Time (epoch)":0
+	},
+
+	"encodings": {
+		"png": 0,
+		"rgb": 0,
+		"rgb24": 0,
+		"h264": 0,
+		"jpeg": 1,
+		"vp8": 0,
+		"vp9": 1,
+		"mmap": 0
+	}
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Xpra Performance Results</title>
+  <link href="css/xpra.css" rel="stylesheet" type="text/css">
+  <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+  <script language="javascript" type="text/javascript" src="js/jquery.flot.js"></script>
+  <script language="javascript" type="text/javascript" src="js/jquery.flot.categories.js"></script>
+  <script language="javascript" type="text/javascript" src="js/jquery.flot.orderbars_mod.js"></script>
+  <script language="javascript" type="text/javascript" src="js/xpra.js"></script>
+  <script language="javascript" type="text/javascript">
+var options = {canvas:true, grid: {margin: {top:50}, hoverable: true}, series: {bars: {show: true, barWidth: 0.08}},  xaxis: {mode: "categories", tickLength: 0, min: -0.3, max: 1}, colors: ["#cc0000", "#787A40", "#9FBF8C", "#C8AB65", "#D4CBC3"]};
+var e0_jpeg_1 = [["deluxe", 568], ];
+var e0_jpeg_2 = [["deluxe", 564], ];
+var e0_jpeg_3 = [["deluxe", 564], ];
+var e0_jpeg_4 = [["deluxe", 564], ];
+var d0_jpeg = [{label: "run 1", data: e0_jpeg_1, bars:{order:0}},{label: "run 2", data: e0_jpeg_2, bars:{order:1}},{label: "run 3", data: e0_jpeg_3, bars:{order:2}},{label: "run 4", data: e0_jpeg_4, bars:{order:3}}];
+var e1_jpeg_1 = [["deluxe", 14765028], ];
+var e1_jpeg_2 = [["deluxe", 12718787], ];
+var e1_jpeg_3 = [["deluxe", 12718787], ];
+var e1_jpeg_4 = [["deluxe", 12718787], ];
+var d1_jpeg = [{label: "run 1", data: e1_jpeg_1, bars:{order:0}},{label: "run 2", data: e1_jpeg_2, bars:{order:1}},{label: "run 3", data: e1_jpeg_3, bars:{order:2}},{label: "run 4", data: e1_jpeg_4, bars:{order:3}}];
+var e2_jpeg_1 = [["deluxe", 24920046], ];
+var e2_jpeg_2 = [["deluxe", 17043882], ];
+var e2_jpeg_3 = [["deluxe", 17043882], ];
+var e2_jpeg_4 = [["deluxe", 17043882], ];
+var d2_jpeg = [{label: "run 1", data: e2_jpeg_1, bars:{order:0}},{label: "run 2", data: e2_jpeg_2, bars:{order:1}},{label: "run 3", data: e2_jpeg_3, bars:{order:2}},{label: "run 4", data: e2_jpeg_4, bars:{order:3}}];
+var e3_jpeg_1 = [["deluxe", 16], ];
+var e3_jpeg_2 = [["deluxe", 16], ];
+var e3_jpeg_3 = [["deluxe", 16], ];
+var e3_jpeg_4 = [["deluxe", 16], ];
+var d3_jpeg = [{label: "run 1", data: e3_jpeg_1, bars:{order:0}},{label: "run 2", data: e3_jpeg_2, bars:{order:1}},{label: "run 3", data: e3_jpeg_3, bars:{order:2}},{label: "run 4", data: e3_jpeg_4, bars:{order:3}}];
+var e4_jpeg_1 = [["deluxe", 11333003], ];
+var e4_jpeg_2 = [["deluxe", 9623829], ];
+var e4_jpeg_3 = [["deluxe", 9623829], ];
+var e4_jpeg_4 = [["deluxe", 9623829], ];
+var d4_jpeg = [{label: "run 1", data: e4_jpeg_1, bars:{order:0}},{label: "run 2", data: e4_jpeg_2, bars:{order:1}},{label: "run 3", data: e4_jpeg_3, bars:{order:2}},{label: "run 4", data: e4_jpeg_4, bars:{order:3}}];
+var e5_vp9_1 = [["deluxe", 392], ];
+var e5_vp9_2 = [["deluxe", 402], ];
+var e5_vp9_3 = [["deluxe", 402], ];
+var e5_vp9_4 = [["deluxe", 402], ];
+var d5_vp9 = [{label: "run 1", data: e5_vp9_1, bars:{order:0}},{label: "run 2", data: e5_vp9_2, bars:{order:1}},{label: "run 3", data: e5_vp9_3, bars:{order:2}},{label: "run 4", data: e5_vp9_4, bars:{order:3}}];
+var e6_vp9_1 = [["deluxe", 9227851], ];
+var e6_vp9_2 = [["deluxe", 7556820], ];
+var e6_vp9_3 = [["deluxe", 7556820], ];
+var e6_vp9_4 = [["deluxe", 7556820], ];
+var d6_vp9 = [{label: "run 1", data: e6_vp9_1, bars:{order:0}},{label: "run 2", data: e6_vp9_2, bars:{order:1}},{label: "run 3", data: e6_vp9_3, bars:{order:2}},{label: "run 4", data: e6_vp9_4, bars:{order:3}}];
+var e7_vp9_1 = [["deluxe", 22510497], ];
+var e7_vp9_2 = [["deluxe", 15111863], ];
+var e7_vp9_3 = [["deluxe", 15111863], ];
+var e7_vp9_4 = [["deluxe", 15111863], ];
+var d7_vp9 = [{label: "run 1", data: e7_vp9_1, bars:{order:0}},{label: "run 2", data: e7_vp9_2, bars:{order:1}},{label: "run 3", data: e7_vp9_3, bars:{order:2}},{label: "run 4", data: e7_vp9_4, bars:{order:3}}];
+var e8_vp9_1 = [["deluxe", 9], ];
+var e8_vp9_2 = [["deluxe", 10], ];
+var e8_vp9_3 = [["deluxe", 10], ];
+var e8_vp9_4 = [["deluxe", 10], ];
+var d8_vp9 = [{label: "run 1", data: e8_vp9_1, bars:{order:0}},{label: "run 2", data: e8_vp9_2, bars:{order:1}},{label: "run 3", data: e8_vp9_3, bars:{order:2}},{label: "run 4", data: e8_vp9_4, bars:{order:3}}];
+var e9_vp9_1 = [["deluxe", 7188273], ];
+var e9_vp9_2 = [["deluxe", 6114521], ];
+var e9_vp9_3 = [["deluxe", 6114521], ];
+var e9_vp9_4 = [["deluxe", 6114521], ];
+var d9_vp9 = [{label: "run 1", data: e9_vp9_1, bars:{order:0}},{label: "run 2", data: e9_vp9_2, bars:{order:1}},{label: "run 3", data: e9_vp9_3, bars:{order:2}},{label: "run 4", data: e9_vp9_4, bars:{order:3}}];
+$(function() {
+	var plot0 = $.plot($("#placeholder_0_0"),d0_jpeg, options);
+	var plot1 = $.plot($("#placeholder_1_0"),d1_jpeg, options);
+	var plot2 = $.plot($("#placeholder_2_0"),d2_jpeg, options);
+	var plot3 = $.plot($("#placeholder_3_0"),d3_jpeg, options);
+	var plot4 = $.plot($("#placeholder_4_0"),d4_jpeg, options);
+	var plot5 = $.plot($("#placeholder_5_0"),d5_vp9, options);
+	var plot6 = $.plot($("#placeholder_6_0"),d6_vp9, options);
+	var plot7 = $.plot($("#placeholder_7_0"),d7_vp9, options);
+	var plot8 = $.plot($("#placeholder_8_0"),d8_vp9, options);
+	var plot9 = $.plot($("#placeholder_9_0"),d9_vp9, options);
+	set_title(0, "Application bytes in/s (jpeg)");
+	set_title(1, "Encoding Pixels/s (jpeg)");
+	set_title(2, "Decoding Pixels/s (jpeg)");
+	set_title(3, "Application packets in/s (jpeg)");
+	set_title(4, "Pixels/s Sent (jpeg)");
+	set_title(5, "Application bytes in/s (vp9)");
+	set_title(6, "Encoding Pixels/s (vp9)");
+	set_title(7, "Decoding Pixels/s (vp9)");
+	set_title(8, "Application packets in/s (vp9)");
+	set_title(9, "Pixels/s Sent (vp9)");
+	$("#metric_link_0").click(function() {$("#metric_list").scrollTop(400.0*0);});
+	$("#metric_link_1").click(function() {$("#metric_list").scrollTop(400.0*1);});
+	$("#metric_link_2").click(function() {$("#metric_list").scrollTop(400.0*2);});
+	$("#metric_link_3").click(function() {$("#metric_list").scrollTop(400.0*3);});
+	$("#metric_link_4").click(function() {$("#metric_list").scrollTop(400.0*4);});
+	$("#metric_link_5").click(function() {$("#metric_list").scrollTop(400.0*5);});
+	$("#metric_link_6").click(function() {$("#metric_list").scrollTop(400.0*6);});
+	$("#metric_link_7").click(function() {$("#metric_list").scrollTop(400.0*7);});
+	$("#metric_link_8").click(function() {$("#metric_list").scrollTop(400.0*8);});
+	$("#metric_link_9").click(function() {$("#metric_list").scrollTop(400.0*9);});
+});</script>
+<style>.metric_box {height: 400.0px}</style>
+</head> 
+<body> 
+<div id="page">
+	<div id="header_box">
+		<div id="header">
+			<h2>Xpra Performance Results</h2>
+			<h3>Comparison between two test runs.</h3>
+			<div id="help_text">Click a metric to locate it in the results.</div>
+		</div>
+		<div id="select_box">
+			<div id="metric_link_0" style="float:left;height:20px;width:200px"><a href="#">Application bytes in/s (jpeg)</a></div>
+			<div id="metric_link_1" style="float:left;height:20px;width:200px"><a href="#">Encoding Pixels/s (jpeg)</a></div>
+			<div id="metric_link_2" style="float:left;height:20px;width:200px"><a href="#">Decoding Pixels/s (jpeg)</a></div>
+			<div id="metric_link_3" style="float:left;height:20px;width:200px"><a href="#">Application packets in/s (jpeg)</a></div>
+			<div id="metric_link_4" style="float:left;height:20px;width:200px"><a href="#">Pixels/s Sent (jpeg)</a></div>
+			<div id="metric_link_5" style="float:left;height:20px;width:200px"><a href="#">Application bytes in/s (vp9)</a></div>
+			<div id="metric_link_6" style="float:left;height:20px;width:200px"><a href="#">Encoding Pixels/s (vp9)</a></div>
+			<div id="metric_link_7" style="float:left;height:20px;width:200px"><a href="#">Decoding Pixels/s (vp9)</a></div>
+			<div id="metric_link_8" style="float:left;height:20px;width:200px"><a href="#">Application packets in/s (vp9)</a></div>
+			<div id="metric_link_9" style="float:left;height:20px;width:200px"><a href="#">Pixels/s Sent (vp9)</a></div>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+	<div id="metric_list">
+	<div class="metric_box" id="metric_box_0">
+		<div class="metric_label">Application bytes in/s</div>
+		<div class="container">
+			<div id="placeholder_0_0" class="placeholder"></div>
+		</div>
+	</div>
+	<div class="metric_box" id="metric_box_1">
+		<div class="metric_label">Encoding Pixels/s</div>
+		<div class="container">
+			<div id="placeholder_1_0" class="placeholder"></div>
+		</div>
+	</div>
+	<div class="metric_box" id="metric_box_2">
+		<div class="metric_label">Decoding Pixels/s</div>
+		<div class="container">
+			<div id="placeholder_2_0" class="placeholder"></div>
+		</div>
+	</div>
+	<div class="metric_box" id="metric_box_3">
+		<div class="metric_label">Application packets in/s</div>
+		<div class="container">
+			<div id="placeholder_3_0" class="placeholder"></div>
+		</div>
+	</div>
+	<div class="metric_box" id="metric_box_4">
+		<div class="metric_label">Pixels/s Sent</div>
+		<div class="container">
+			<div id="placeholder_4_0" class="placeholder"></div>
+		</div>
+	</div>
+	<div class="metric_box" id="metric_box_5">
+		<div class="metric_label">Application bytes in/s</div>
+		<div class="container">
+			<div id="placeholder_5_0" class="placeholder"></div>
+		</div>
+	</div>
+	<div class="metric_box" id="metric_box_6">
+		<div class="metric_label">Encoding Pixels/s</div>
+		<div class="container">
+			<div id="placeholder_6_0" class="placeholder"></div>
+		</div>
+	</div>
+	<div class="metric_box" id="metric_box_7">
+		<div class="metric_label">Decoding Pixels/s</div>
+		<div class="container">
+			<div id="placeholder_7_0" class="placeholder"></div>
+		</div>
+	</div>
+	<div class="metric_box" id="metric_box_8">
+		<div class="metric_label">Application packets in/s</div>
+		<div class="container">
+			<div id="placeholder_8_0" class="placeholder"></div>
+		</div>
+	</div>
+	<div class="metric_box" id="metric_box_9">
+		<div class="metric_label">Pixels/s Sent</div>
+		<div class="container">
+			<div id="placeholder_9_0" class="placeholder"></div>
+		</div>
+	</div>
+<div class="metric_box"></div>
+</div>
+</div>
+</body>
+</html>
