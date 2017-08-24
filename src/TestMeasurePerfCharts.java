@@ -19,7 +19,7 @@
  *      xtests/logs/
  *          *.csv
  *      
- *      Test_measure_perf_charts.java
+ *      TestMeasurePerfCharts.java
  *      TestData.java
  *      configuration.json
  *      head.txt        - used to build the top portion of charts2.html
