@@ -389,7 +389,7 @@ public class TestMeasurePerfCharts {
     */ 
 
     // read charting config file - what to chart
-    init_config("src\\configuration.json");
+    init_config("src//configuration.json");
 
     // read the input csv files and build the charting data structures
     for (Object el : params) {
