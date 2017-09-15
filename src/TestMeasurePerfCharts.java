@@ -1,11 +1,11 @@
 
-/*
+/**
  * Author: Kamran Mostafavi
  * Mar 2017
  * 
  * This utility takes as its input a set of csv files (Max of 4) that contain identical metrics
  * for measuring performance. It uses a configuration file to determine which metrics to chart
- * and creates a html file (charts2.html) which charts the configured metric.
+ * and creates a html file (outputfile.html) which charts the configured metric.
  * 
  * It uses com.csvreader to read the input csv files
  * It uses simple.json.*  to read the json configuration file
@@ -22,7 +22,7 @@
  *      TestMeasurePerfCharts.java
  *      TestData.java
  *      configuration.json
- *      head.txt        - used to build the top portion of charts2.html
+ *      head.txt        - used to build the top portion of outputfile.html
  *         
  * 
 */
@@ -38,15 +38,42 @@ import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
 
 public class TestMeasurePerfCharts {
-  // some global variables.
+
+/*
+ * title of the report.
+ */
+  static String title;
+/*
+ * more description following title.
+ */
   static String description;
+/*
+ * html output file name.
+ */
+  static String oFileName;
+/**
+ * an array that contains the list of csv files to be compared with associated properties
+ */
   static List params = new ArrayList();
+/*
+ * an array containing the name of applications whose performance is being charted
+ */
   static Map<String, Integer> apps = new HashMap<String, Integer>();
+/*
+ * an array containing the performance metrics that are being charted
+ */
   static Map<String, Integer> metrics = new HashMap<String, Integer>();
+/*
+ * an array containing the encodings that are being charted / compared.
+ */
   static Map<String, Integer> encodings = new HashMap<String, Integer>();
 
+  /*
+   * reads a file and returns its contents as a string
+   * @param fileName name of the file including path
+   * @return String containing the contents of the file
+   */
   public static String readFile(String fileName) {
-    // reads a file and returns it in a string
     StringBuilder sb = new StringBuilder();
     try {
       BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -66,9 +93,15 @@ public class TestMeasurePerfCharts {
     return sb.toString();
   }
 
-  public static void writeFile(String filename, String str, boolean append) {
+  /*
+   * writes a string to a file. It either appends to the end of the file or replaces the file
+   * with new contents.
+   * @param fileName name of the file to be written including path
+   * @return void
+   */
+  public static void writeFile(String fileName, String str, boolean append) {
     try {
-      FileWriter writer = new FileWriter(filename, append);
+      FileWriter writer = new FileWriter(fileName, append);
       writer.write(str);
       writer.close();
     } catch (IOException e) {
@@ -77,8 +110,14 @@ public class TestMeasurePerfCharts {
 
   }
 
+  /*
+   * it cleans the contents of the collection passed to it as a parameter.
+   * valid collections are apps, metrics, and encodings. clean means keeping the elements which
+   * are set to 1. 
+   * @param m1 the collection that needs to be cleaned
+   * @return the cleaned version of the collection
+   */
   public static Map clean(Map m1) {
-    // only keep apps, metrics, encodings that are set to 1
     Map m2 = new HashMap();
 
     for (Object s1 : m1.keySet()) {
@@ -89,14 +128,19 @@ public class TestMeasurePerfCharts {
     return m2;
   }
 
-  public static void addtests(Integer id, String filename) {
-    // read csv test file and create the data structures for charting
+  /*
+   * reads csv test file and creates the data structures necessary for charting
+   * @param id unique id of the csv file - refer to configuration.json
+   * @param fileName name of the csv file including its path
+   * @return void
+   */
+  public static void addtests(Integer id, String fileName) {
     try {
 
-      CsvReader data = new CsvReader(filename);
+      CsvReader data = new CsvReader(fileName);
 
       data.readHeaders();
-      System.out.println(id + "," + filename);
+      System.out.println(id + "," + fileName);
 
       while (data.readRecord()) {
         // while records remain to be read - data
@@ -131,7 +175,11 @@ public class TestMeasurePerfCharts {
       e.printStackTrace();
     }
   }
-
+/*
+ * used only for test purposes - prints a collection of object to console.
+ * @param mp the collection to be printed
+ * @return void
+ */
   public static void printMap(Map mp) {
     // print a HashMap
     Iterator it = mp.entrySet().iterator();
@@ -142,16 +190,24 @@ public class TestMeasurePerfCharts {
     }
   }
 
-  public static void init_config(String filename) {
+  /*
+   * reads the configuration file, a json file and initializes the data structures according to the
+   * configuration stated in that file
+   * @param fileName name of json configuration file including its path
+   * @return void
+   */
+  public static void init_config(String fileName) {
     // read the configuration file and initialize charting data structures
 
-    String s = readFile(filename);
+    String s = readFile(fileName);
     try {
       JSONParser jsonParser = new JSONParser();
       JSONObject jsonObject = (JSONObject) jsonParser.parse(s);
 
       // get String variables from the JSON object
+      title = (String) jsonObject.get("title");
       description = (String) jsonObject.get("description");
+      oFileName= (String) jsonObject.get("outputfile");
 
       // get HashMaps
 
@@ -182,7 +238,14 @@ public class TestMeasurePerfCharts {
     }
   }
 
-  public static void write_html(String filename) {
+  /*
+   * creates the html file that includes the charts for data extracted from csv files. 
+   * This function writes the necessary javascript code and associated links to source code
+   * for charting. The code is custom as it relies on specific charting libraries, etc. 
+   * @param fileName name of the output html file
+   * @return void
+   */
+  public static void write_html(String fileName) {
     // create the chart.html file
     // build the head of the html file
     String head = readFile("src/head.txt");
@@ -326,8 +389,8 @@ public class TestMeasurePerfCharts {
     var = var + "</script>\n" + "<style>.metric_box {height: 400.0px}</style>\n" 
       + "</head> \n" + "<body> \n" + "<div id=\"page\">\n" 
       + "\t<div id=\"header_box\">\n" + "\t\t<div id=\"header\">\n"
-      + "\t\t\t<h2>Xpra Performance Results</h2>\n" 
-      + "\t\t\t<h3>Comparison between two test runs.</h3>\n"
+      + "\t\t\t<h2>"+title+"</h2>\n" 
+      + "\t\t\t<h3>"+description+"</h3>\n"
       + "\t\t\t<div id=\"help_text\">Click a metric to locate it in the results.</div>\n" 
       + "\t\t</div>\n" + "\t\t<div id=\"select_box\">\n";
 
@@ -372,9 +435,13 @@ public class TestMeasurePerfCharts {
       + "</body>\n" + "</html>\n";
 
     System.out.print(var);
-    writeFile(filename, head + var, false);
+    writeFile(fileName, head + var, false);
   }
 
+  /*
+   * main routine for the program. It reads the configuration file and builds the data structures to
+   * create the output html file that has the charts.
+   */
   public static void main(String[] args) {
     /*
          The files this generator acts upon are the CSV files output
@@ -402,7 +469,7 @@ public class TestMeasurePerfCharts {
     System.out.println(TestData.chartIds);
     TestData.printTestList(TestData.charts);
 
-    write_html("src/charts2.html");
+    write_html("src/"+oFileName+".html");
 
   }
 }

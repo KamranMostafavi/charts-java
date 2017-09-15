@@ -1,6 +1,7 @@
 {
-	"description" : "Comparison between two test runs.",
-
+	"title" : "Performance Test Results.",
+	"description" : "Comparison between two or more test runs.",
+	"outputfile" : "charts2",
 	"params": [{
 		"id": "1",
 		"file": "src/xtests/logs/test_1_1.csv",
